@@ -30,9 +30,11 @@ class _HomeState extends State<Home> {
         title: Text("カウンターアプリ"),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text("0"),
+          Text("0", style: TextStyle(fontSize: 40),),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               ElevatedButton(
                 child: Icon(Icons.remove),
