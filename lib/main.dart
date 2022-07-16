@@ -27,10 +27,28 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("title"),
+        title: Text("カウンターアプリ"),
       ),
-      body: Center(
-        child: Text("text"),
+      body: Column(
+        children: [
+          Text("0"),
+          Row(
+            children: [
+              ElevatedButton(
+                child: Icon(Icons.remove),
+                onPressed: () {
+
+                },
+              ),
+              ElevatedButton(
+                child: Icon(Icons.add),
+                onPressed: () {
+
+                },
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
