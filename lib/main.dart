@@ -23,6 +23,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  int count = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,20 +34,24 @@ class _HomeState extends State<Home> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text("0", style: TextStyle(fontSize: 40),),
+          Text(count.toString(), style: TextStyle(fontSize: 40),),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               ElevatedButton(
                 child: Icon(Icons.remove),
                 onPressed: () {
-
+                  setState(() {
+                    count-=1;
+                  });
                 },
               ),
               ElevatedButton(
                 child: Icon(Icons.add),
                 onPressed: () {
-
+                  setState(() {
+                    count+=1;
+                  });
                 },
               ),
             ],
