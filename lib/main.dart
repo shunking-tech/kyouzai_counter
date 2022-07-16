@@ -23,7 +23,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List list = [0, 1, 2];
+  List list = [];
 
   @override
   Widget build(BuildContext context) {
@@ -53,13 +53,19 @@ class _HomeState extends State<Home> {
               ElevatedButton(
                 child: Icon(Icons.remove),
                 onPressed: () {
-
+                  if (list.length != 0) {
+                    setState(() {
+                      list.removeLast();
+                    });
+                  }
                 },
               ),
               ElevatedButton(
                 child: Icon(Icons.add),
                 onPressed: () {
-
+                  setState(() {
+                    list.add(list.length);
+                  });
                 },
               ),
             ],
