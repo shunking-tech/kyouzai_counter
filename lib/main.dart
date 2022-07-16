@@ -23,7 +23,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int count = 0;
+  List list = [0, 1, 2];
 
   @override
   Widget build(BuildContext context) {
@@ -34,24 +34,32 @@ class _HomeState extends State<Home> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(count.toString(), style: TextStyle(fontSize: 40),),
+          Expanded(
+            child: ListView.builder(
+              itemCount: list.length,
+              itemBuilder: (context, index) {
+                return Center(
+                  child: Text(
+                    list[index].toString(),
+                    style: TextStyle(fontSize: 24),
+                  ),
+                );
+              },
+            ),
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               ElevatedButton(
                 child: Icon(Icons.remove),
                 onPressed: () {
-                  setState(() {
-                    count-=1;
-                  });
+
                 },
               ),
               ElevatedButton(
                 child: Icon(Icons.add),
                 onPressed: () {
-                  setState(() {
-                    count+=1;
-                  });
+
                 },
               ),
             ],
